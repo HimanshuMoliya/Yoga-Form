@@ -3,7 +3,7 @@ from django.core.validators import RegexValidator
 # Create your models here.
 
 class User(models.Model):
-    user_id=models.BigAutoField(primary_key=True)
+    user_id=models.AutoField(primary_key=True)
     first_name=models.CharField(max_length=30)
     last_name=models.CharField(max_length=30)
     age=models.PositiveIntegerField()
@@ -20,24 +20,24 @@ class User(models.Model):
     batch=models.ForeignKey('Batch',on_delete=models.CASCADE,null=False)
 
 class Batch(models.Model):
-    batch_id=models.BigAutoField(primary_key=True)
+    batch_id=models.AutoField(primary_key=True)
     SESSION_CHOICES = (
-        ('M', '6-7 AM'),
-        ('M', '7-8 AM'),
-        ('M', '8-9 AM'),
+        ('M1', '6-7 AM'),
+        ('M2', '7-8 AM'),
+        ('M3', '8-9 AM'),
         ('E', '5-6 PM')
     )
     time=models.CharField(max_length=20, choices=SESSION_CHOICES, null=False)
 
 class Payment(models.Model):
-    payment_id=models.BigAutoField(primary_key=True)
+    payment_id=models.AutoField(primary_key=True)
     user_id=models.ForeignKey('User',on_delete=models.CASCADE)
-    amount=models.PositiveBigIntegerField(null=False)
-    date=models.DateField(null=False)
-    paid=models.BooleanField()
+    amount=models.PositiveIntegerField(null=False)
+    date=models.DateTimeField(null=False)
+    payment_successful=models.BooleanField()
 
 class Admission(models.Model):
-    admission_id=models.BigAutoField(primary_key=True)
+    admission_id=models.AutoField(primary_key=True)
     user_id=models.ForeignKey('User',on_delete=models.CASCADE)
     payment_id=models.ForeignKey('Payment',on_delete=models.CASCADE)
     batch_id=models.ForeignKey('Batch',on_delete=models.CASCADE)
