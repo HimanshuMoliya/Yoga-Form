@@ -77,11 +77,11 @@ WSGI_APPLICATION = 'yogaform.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
+        'NAME': 'postgres',
         'USER': 'postgres',
-        'PASSWORD': 'SqVVNeREa5BURNY2OPhb',
-        'HOST': 'containers-us-west-155.railway.app',
-        'PORT': '6375',
+        'PASSWORD': 'postgres',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
