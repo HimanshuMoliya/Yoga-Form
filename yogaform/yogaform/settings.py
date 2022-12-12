@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myapp',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -52,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'yogaform.urls'
@@ -74,7 +76,19 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'yogaform.wsgi.application'
 
+CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ALLOWED_ORIGINS= [
+#   'http://localhost:8000',
+# ]
 
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
