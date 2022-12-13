@@ -88,13 +88,12 @@ HTTP Response 'Payment Successful' is generated.
 
 8. User Data is successfully stored in database:
 
-Examples:
-
 ![userTableData](https://user-images.githubusercontent.com/71372587/207460365-ee2b10dc-3b8e-423e-ae38-a98f11351ea5.png)
 
 ![paymentTableData](https://user-images.githubusercontent.com/71372587/207460391-f525a021-39bf-4a4b-acc1-bd21282247cd.png)
 
+![batchTableData](https://user-images.githubusercontent.com/71372587/207462217-e5624d5b-b68f-4e4b-9560-93027c520e13.png)
 
-
+![admissionTableData](https://user-images.githubusercontent.com/71372587/207462233-5bcadde7-482b-4a02-90a2-6b0ba5cf7aac.png)
 
 
