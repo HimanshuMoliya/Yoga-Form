@@ -1,10 +1,11 @@
 from .models import *
 from rest_framework import serializers
+from django.core.mail import send_mail
 
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model=User
-        fields= ['user_id','first_name','last_name','age','email','contact_number','gender','batch']
+# class UserSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model=User
+#         fields= ['user_id','first_name','last_name','age','email','contact_number','gender','batch']
 
 class FormSerializer(serializers.Serializer):
     first_name = serializers.CharField(max_length=30)
@@ -28,11 +29,39 @@ class FormSerializer(serializers.Serializer):
         amt=self.get('amount')
         p=self.get('payment_successful')
         User.objects.create(first_name=f_name,last_name=l_name,age=a,email=e,contact_number=cn,gender=g, batch_id=b)
-        u_id=User.objects.order_by('-user_id')[0]
+        obj=User.objects.filter(email=e)[0]
+        u_id=obj
         Payment.objects.create(user_id=u_id,amount=amt,payment_successful=p)
-
+        url_test = '127.0.0.1:8000/completePayment'
+        send_mail('Yoga For Life - Payment Link',
+        'Dear '+f_name+',\n\nThanks for enrolling in our yoga class.\nCharges: Rs 500/month\nKindly make the payment with the link given below. You can make the payment within 30 days of enrolment to confirm your admission.\n\nLink:'+url_test+'\n\nThank you and see you soon:)\n\nBest,\nSanya',
+        'zaverisanya@gmail.com',
+        [e],fail_silently=False)
         if(p=='True'):
-            p_id=Payment.objects.order_by('-payment_id')[0]
+            o=Payment.objects.filter(user_id=u_id)[0]
+            p_id=o
             Admission.objects.create(payment_id=p_id,user_id=u_id,batch_id=b)
-        
 
+class UpdateSerializer(serializers.Serializer):
+    email=serializers.EmailField()
+    batch_id=serializers.IntegerField()
+    payment_successful=serializers.BooleanField()
+
+    def save(self):
+        e=self.get('email')
+        b=self.get('batch_id')
+        p=self.get('payment_successful')
+        amt=self.get('amount')
+        User.objects.filter(email=e).update(batch_id=b)
+        obj=User.objects.filter(email=e)[0]   
+        u_id=obj
+        Payment.objects.create(user_id=u_id,amount=amt,payment_successful=p)
+        url_test = '127.0.0.1:8000/completePayment'
+        send_mail('Yoga For Life - Payment Link',
+       'Hey,\n\nThanks for enrolling in our yoga class once again.\nCharges: Rs 500/month\nKindly make the payment with the link given below. You can make the payment within 30 days of enrolment to confirm your admission.\n\nLink: '+url_test+'\n\nThank you and see you soon:)\n\nBest,\nSanya',
+        'zaverisanya@gmail.com',[e],fail_silently=False)
+        if(p=='True'):
+            o=Payment.objects.filter(user_id=u_id)[0]
+            p_id=o
+            Admission.objects.create(payment_id=p_id,user_id=u_id,batch_id=b)
+            

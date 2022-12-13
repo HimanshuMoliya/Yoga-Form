@@ -6,10 +6,8 @@ from django.core.exceptions import ValidationError
 
 def validate_age(value):
     if value < 18 or value > 65:
-        raise ValidationError(
-            ('Age must be between 18 and 65'),
-            params={'value': value},
-        )
+        raise ValidationError(('%(value)% should be between 18 and 56'), 
+        params= {'age':value},) 
 
 class User(models.Model):
     user_id=models.AutoField(primary_key=True)
@@ -18,8 +16,7 @@ class User(models.Model):
     age=models.PositiveIntegerField(validators=[validate_age])
     email=models.EmailField(max_length=25,unique='True')
 
-    phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$', message="Enter a valid contact number")
-    contact_number = models.CharField(validators=[phone_regex], max_length=17, blank=True,unique='True') 
+    contact_number = models.CharField(max_length=10, blank=True,unique='True') 
 
     GENDER_CHOICES = (
         ('M', 'Male'),
