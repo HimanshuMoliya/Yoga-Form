@@ -2,11 +2,6 @@ from .models import *
 from rest_framework import serializers
 from django.core.mail import send_mail
 
-# class UserSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model=User
-#         fields= ['user_id','first_name','last_name','age','email','contact_number','gender','batch']
-
 class FormSerializer(serializers.Serializer):
     first_name = serializers.CharField(max_length=30)
     last_name=serializers.CharField(max_length=30)
