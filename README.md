@@ -96,4 +96,16 @@ HTTP Response 'Payment Successful' is generated.
 
 ![admissionTableData](https://user-images.githubusercontent.com/71372587/207462233-5bcadde7-482b-4a02-90a2-6b0ba5cf7aac.png)
 
+Notes and Assumptions:
 
+1. The complete payment function is a stubbed function. Right now the complete payment is always true and all the users are admitted. Complete payment should keep the track of link sent in mail and only if the user pays the amount, the user's admission is confirmed else the user details should not be added to admission.
+
+2. Email is sent using the Sendgrid API and it allows only 100 free emails per day. So in the demonstration, its limit exceeded and the already sent email is shown.
+
+3. Could not deploy because of following issues:
+
+-> Tried deploying on Railway.app 2 times but the deployment failed due rpc error: code = Unknown desc = invalid command line string.
+
+-> Already deployed an app earlier on Heroku which blocked me to create new app. Used student developer pack yet it asked for payment details which blocked me to move forward.
+
+-> Tried deleting the older app and deploying but there was an error in Procfile.
