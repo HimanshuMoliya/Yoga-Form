@@ -3,6 +3,7 @@ document.getElementById("formdata").addEventListener("submit",function(e){
         first_name=document.getElementById("first_name").value;
         last_name=document.getElementById("last_name").value;
         age=document.getElementById("age").value;
+        // if(age<18 || age>65)  alert('Age must be between 18 and 65');
         email=document.getElementById("email").value;
         contact_number=document.getElementById("contact_number").value;
         if (document.getElementById('g1').checked) {

@@ -86,7 +86,7 @@
     border-width: 1px 1px 3px;
     box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
     margin-bottom: 10px;
-    cursor:pointer
+    cursor:pointer;    
   }
   
 button:disabled,
@@ -103,10 +103,16 @@ button[disabled]{
   border: 1px solid #999999;
   background-color: #cccccc;
   color: #666666;
-  cursor:pointer
-
+  cursor:crosshair;
 }
 
+button:hover:enabled{background-color: #3e8e41}
+
+button:active:enabled {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
   fieldset {
     margin-bottom: 30px;
     border: none;
