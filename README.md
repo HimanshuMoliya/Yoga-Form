@@ -104,8 +104,8 @@ Notes and Assumptions:
 
 3. Could not deploy because of following issues:
 
--> Tried deploying on Railway.app 2 times but the deployment failed due rpc error: code = Unknown desc = invalid command line string.
+  -> Tried deploying on Railway.app 2 times but the deployment failed due rpc error: code = Unknown desc = invalid command line string.
 
--> Already deployed an app earlier on Heroku which blocked me to create new app. Used student developer pack yet it asked for payment details which blocked me to move forward.
+  -> Already deployed an app earlier on Heroku which blocked me to create new app. Used student developer pack yet it asked for payment details which       blocked me to move forward.
 
--> Tried deleting the older app and deploying but there was an error in Procfile.
+  -> Tried deleting the older app and deploying but there was an error in Procfile.
