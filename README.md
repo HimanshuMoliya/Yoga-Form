@@ -82,7 +82,9 @@ Email is sent to the user using Django send_mail and Sendgrid API:
 
 7. On clicking the link sent in mail:
 
-HTTP Response 'Payment Successful' is generated
+HTTP Response 'Payment Successful' is generated.
+
+![Screenshot from 2022-12-14 04-12-35](https://user-images.githubusercontent.com/71372587/207460805-89ed2bf8-7a65-49c2-8a50-40011c94853f.png)
 
 8. User Data is successfully stored in database:
 
