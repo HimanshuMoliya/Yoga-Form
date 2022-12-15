@@ -1,1 +1,1 @@
-web: gunicorn 'yogaform.wsgi'
+web: python manage.py migrate && gunicorn yogaform.wsgi
