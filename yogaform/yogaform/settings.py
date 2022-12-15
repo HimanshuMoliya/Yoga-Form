@@ -37,7 +37,7 @@ SECURE_SSL_REDIRECT=True
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = False
 DEBUG = os.environ.get('DEBUG')
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['web-production-7af1.up.railway.app','127.0.0.1']
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
@@ -89,10 +89,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'yogaform.wsgi.application'
 
-CORS_ORIGIN_ALLOW_ALL = True
-# CORS_ALLOWED_ORIGINS= [
-#   'http://localhost:8000',
-# ]
+# CORS_ORIGIN_ALLOW_ALL = True
+# # CORS_ALLOWED_ORIGINS= [
+# #   'http://localhost:8000',
+# # ]
+CSRF_TRUSTED_ORIGINS = ['web-production-7af1.up.railway.app']
 
 CORS_ALLOW_METHODS = [
     "DELETE",
