@@ -68,7 +68,7 @@ Form Validation
 
 ![Screenshot from 2022-12-14 03-52-43](https://user-images.githubusercontent.com/71372587/207458176-b8be0a84-c586-44f4-8cfd-ea4ea94293d7.png)
 
-6. The idea is here to register the user and send the payment link in mail so that user can pay the amount within 30 days and also the admission is
+6. The idea here is to register the user and send the payment link in mail so that user can pay the amount within 30 days and also the admission is
 confirmed after the completion of payment. 
 
 Assumption: Here the complete payment is stubbed function and it is always set to true. Hence all the registered users are admitted. The user registering 
