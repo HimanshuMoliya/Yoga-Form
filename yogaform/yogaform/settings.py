@@ -36,8 +36,13 @@ SECURE_SSL_REDIRECT=True
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = False
-DEBUG = os.environ.get('DEBUG')
+# DEBUG = os.environ.get('DEBUG')
+DEBUG=False
+SECURE_HSTS_SECONDS = 60
+SECURE_HSTS_INCLUDE_SUBDOMAINS=True
+SECURE_HSTS_PRELOAD=True
 ALLOWED_HOSTS = ['web-production-7af1.up.railway.app','127.0.0.1']
+# ALLOWED_HOSTS=['*']
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
@@ -90,9 +95,9 @@ TEMPLATES = [
 WSGI_APPLICATION = 'yogaform.wsgi.application'
 
 # CORS_ORIGIN_ALLOW_ALL = True
-# # CORS_ALLOWED_ORIGINS= [
-# #   'http://localhost:8000',
-# # ]
+# CORS_ALLOWED_ORIGINS= [
+#   'http://localhost:8000',
+# ]
 CSRF_TRUSTED_ORIGINS = ['web-production-7af1.up.railway.app']
 
 CORS_ALLOW_METHODS = [
@@ -163,8 +168,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_PORT = 587
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+EMAIL_PORT = os.environ.get('EMAIL_PORT')
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
