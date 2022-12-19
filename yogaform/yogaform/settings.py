@@ -52,7 +52,7 @@ ALLOWED_HOSTS = ['web-production-7af1.up.railway.app','127.0.0.1']
 # ALLOWED_HOSTS=['*']
 # DJANGO_SETTINGS_MODULE='correctly_settings'
 # os.environ['DJANGO_SETTINGS_MODULE'] = 'yogaform.settings'
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "yogaform.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "yogaform.settings.production")
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
