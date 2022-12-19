@@ -13,7 +13,6 @@ def completePayment(request):
 def yogaform(request):
     if request.method=='POST':
         serializer=FormSerializer(data=request.data)
-        print(serializer)
         if serializer.is_valid():
            FormSerializer.save(request.data)
            return Response(serializer.data, status=status.HTTP_201_CREATED)

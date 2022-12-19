@@ -41,15 +41,10 @@ document.getElementById("formdata").addEventListener("submit",function(e){
         formData.append('amount',amount);
         formData.append('payment_successful',payment_successful);
         console.log(formData);
-
-        // var myHeaders = new Headers();
-        // myHeaders.append("Authorization", "Bearer <api_key>");
-        // myHeaders.append("Content-Type", "application/json");
-        console.log("done till here")
+        
         fetch('https://web-production-7af1.up.railway.app',{
             method:'POST',
             body:formData,
-            // headers: myHeaders
         })
         .then(response=>response.json())
         .then(response => console.log(JSON.stringify(response)))

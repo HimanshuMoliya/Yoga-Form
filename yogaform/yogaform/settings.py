@@ -13,12 +13,9 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 import os
 import environ
-# from dotenv import load_dotenv
 # Update database configuration from $DATABASE_URL.
 import dj_database_url
 
-
-# BASE_DIR = Path(__file__).resolve().parent.parent
 
 # load_dotenv(os.path.join(BASE_DIR, ".env"))
 env = environ.Env()
@@ -33,32 +30,28 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECURE_HSTS_SECONDS = 31536000
-# SECURE_CONTENT_TYPE_NOSNIFF = True
-# SECRET_KEY = 'django-insecure-acc5f7ej9gbqg77#d9dc2!nts)yh4%ohv@uk+8x5ru1=e-8uo5'
 SECRET_KEY=os.environ.get('SECRET_KEY')
-# print(SECRET_KEY)
-CSRF_COOKIE_SECURE=True
-SESSION_COOKIE_SECURE=True
-SECURE_SSL_REDIRECT=False
+
+CSRF_COOKIE_SECURE=True  #comment this in local server
+SESSION_COOKIE_SECURE=True #comment this in local server
+SECURE_SSL_REDIRECT=False #comment this in local server
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = False
-# DEBUG = os.environ.get('DEBUG')
-DEBUG=False
-SECURE_HSTS_SECONDS = 60
-SECURE_HSTS_INCLUDE_SUBDOMAINS=True
-SECURE_HSTS_PRELOAD=True
+
+DEBUG=False     #turn this on in local server
+SECURE_HSTS_SECONDS = 60 #comment this in local server
+SECURE_HSTS_INCLUDE_SUBDOMAINS=True #comment this in local server
+SECURE_HSTS_PRELOAD=True  #comment this in local server
 ALLOWED_HOSTS = ['web-production-7af1.up.railway.app','127.0.0.1']
-# ALLOWED_HOSTS=['*']
-# DJANGO_SETTINGS_MODULE='correctly_settings'
-# os.environ['DJANGO_SETTINGS_MODULE'] = 'yogaform.settings'
+# ALLOWED_HOSTS=[] for local server
+
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "yogaform.settings")
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10
 }
+
 # Application definition
 
 
@@ -107,11 +100,11 @@ TEMPLATES = [
 WSGI_APPLICATION = 'yogaform.wsgi.application'
 
 CORS_ORIGIN_ALLOW_ALL = True
-# CORS_ALLOWED_ORIGINS= [
+# CORS_ALLOWED_ORIGINS= [  #uncomment for local server
 #   'http://localhost:8000',
 # ]
 CSRF_TRUSTED_ORIGINS = ['https://web-production-7af1.up.railway.app',]
-# CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000']
+# CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000'] #uncomment for local server
 
 CORS_ALLOW_METHODS = [
     "DELETE",
@@ -180,16 +173,10 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
-# SERVER_EMAIL=os.environ.get('SERVER_EMAIL')
 EMAIL_HOST = os.environ.get('EMAIL_HOST')
-# EMAIL_HOST ='smtp.sendgrid.net'
-# EMAIL_PORT = os.environ.get('EMAIL_PORT')
 EMAIL_PORT=587
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-# EMAIL_HOST_USER='apikey'
-# EMAIL_HOST_PASSWORD=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
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
