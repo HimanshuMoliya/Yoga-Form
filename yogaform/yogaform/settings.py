@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 import os
 import environ
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 # Update database configuration from $DATABASE_URL.
 import dj_database_url
 
@@ -45,7 +45,7 @@ SECURE_SSL_REDIRECT=False
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = False
 # DEBUG = os.environ.get('DEBUG')
-DEBUG=True
+DEBUG=False
 SECURE_HSTS_SECONDS = 60
 SECURE_HSTS_INCLUDE_SUBDOMAINS=True
 SECURE_HSTS_PRELOAD=True
