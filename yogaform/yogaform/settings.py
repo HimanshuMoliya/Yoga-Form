@@ -37,7 +37,7 @@ SECURE_SSL_REDIRECT=False
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = False
 # DEBUG = os.environ.get('DEBUG')
-DEBUG=True
+DEBUG=False
 SECURE_HSTS_SECONDS = 60
 SECURE_HSTS_INCLUDE_SUBDOMAINS=True
 SECURE_HSTS_PRELOAD=True
