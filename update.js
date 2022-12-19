@@ -15,7 +15,7 @@ document.getElementById("formdata").addEventListener("submit",function(e){
         // myHeaders.append("Authorization", "Bearer <api_key>");
         // myHeaders.append("Content-Type", "application/json");
 
-        fetch('/update',{
+        fetch('https://web-production-7af1.up.railway.app/update',{
             method:'POST',
             body:formData,
             // headers: myHeaders
