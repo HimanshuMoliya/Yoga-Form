@@ -186,10 +186,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 EMAIL_HOST ='smtp.sendgrid.net'
 # EMAIL_PORT = os.environ.get('EMAIL_PORT')
 EMAIL_PORT=587
-# EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-# EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-EMAIL_HOST_USER='apikey'
-EMAIL_HOST_PASSWORD='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'
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+# EMAIL_HOST_USER='apikey'
+# EMAIL_HOST_PASSWORD='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'
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
