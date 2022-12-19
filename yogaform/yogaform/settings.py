@@ -15,6 +15,11 @@ import os
 import environ
 # Update database configuration from $DATABASE_URL.
 import dj_database_url
+from dotenv import load_dotenv
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+load_dotenv(os.path.join(BASE_DIR, ".env"))
 
 env = environ.Env()
 environ.Env.read_env()
@@ -29,7 +34,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURE_HSTS_SECONDS = 31536000
 # SECURE_CONTENT_TYPE_NOSNIFF = True
 # SECRET_KEY = 'django-insecure-acc5f7ej9gbqg77#d9dc2!nts)yh4%ohv@uk+8x5ru1=e-8uo5'
-SECRET_KEY=os.environ.get('SECRET_KEY')
+SECRET_KEY=os.getenv('SECRET_KEY')
 CSRF_COOKIE_SECURE=True
 SESSION_COOKIE_SECURE=True
 SECURE_SSL_REDIRECT=False
@@ -43,6 +48,7 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS=True
 SECURE_HSTS_PRELOAD=True
 ALLOWED_HOSTS = ['web-production-7af1.up.railway.app','127.0.0.1']
 # ALLOWED_HOSTS=['*']
+# DJANGO_SETTINGS_MODULE='correctly_settings'
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
