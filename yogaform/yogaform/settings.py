@@ -110,7 +110,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 # CORS_ALLOWED_ORIGINS= [
 #   'http://localhost:8000',
 # ]
-CSRF_TRUSTED_ORIGINS = ['https://web-production-7af1.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://web-production-7af1.up.railway.app',]
 # CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000']
 
 CORS_ALLOW_METHODS = [
