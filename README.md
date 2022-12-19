@@ -10,6 +10,8 @@ My app is live here: https://zaverisanya.github.io/Yoga-Form (deployed late but 
 
 -> Frontend Languages: HTML, CSS, Javascript
 
+-> Deployment : Railway
+
 Steps to build this Project:
 
 1. Designing Database and ER Diagram:
