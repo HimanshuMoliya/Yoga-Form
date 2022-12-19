@@ -46,7 +46,7 @@ document.getElementById("formdata").addEventListener("submit",function(e){
         // myHeaders.append("Authorization", "Bearer <api_key>");
         // myHeaders.append("Content-Type", "application/json");
 
-        fetch('http://127.0.0.1:8000',{
+        fetch('https://web-production-7af1.up.railway.app/',{
             method:'POST',
             body:formData,
             // headers: myHeaders
