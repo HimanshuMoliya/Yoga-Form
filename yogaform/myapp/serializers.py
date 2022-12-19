@@ -1,6 +1,7 @@
 from .models import *
 from rest_framework import serializers
 from django.core.mail import send_mail
+from django.conf import settings
 
 class FormSerializer(serializers.Serializer):
     first_name = serializers.CharField(max_length=30)
@@ -31,7 +32,7 @@ class FormSerializer(serializers.Serializer):
         url_test = 'https://web-production-7af1.up.railway.app/completePayment'
         send_mail('Yoga For Life - Payment Link',
         'Dear '+f_name+',\n\nThanks for enrolling in our yoga class.\nCharges: Rs 500/month\nKindly make the payment with the link given below. You can make the payment within 30 days of enrolment to confirm your admission.\n\nLink:'+url_test+'\n\nThank you and see you soon:)\n\nBest,\nSanya',
-        'zaverisanya@gmail.com',[e],fail_silently=True)
+        settings.SERVER_MAIL,[e],fail_silently=True)
         print("after_send_email")
         if(p=='True'):
             o=Payment.objects.filter(user_id=u_id)[0]
