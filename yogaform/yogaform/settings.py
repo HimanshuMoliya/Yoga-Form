@@ -182,8 +182,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
 # SERVER_EMAIL=os.environ.get('SERVER_EMAIL')
-# EMAIL_HOST = os.environ.get('EMAIL_HOST')
-EMAIL_HOST ='smtp.sendgrid.net'
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+# EMAIL_HOST ='smtp.sendgrid.net'
 # EMAIL_PORT = os.environ.get('EMAIL_PORT')
 EMAIL_PORT=587
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
