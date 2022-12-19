@@ -14,7 +14,7 @@ class User(models.Model):
     first_name=models.CharField(max_length=30)
     last_name=models.CharField(max_length=30)
     age=models.PositiveIntegerField(validators=[validate_age])
-    email=models.EmailField(max_length=25,unique='True')
+    email=models.EmailField(max_length=50,unique='True')
 
     contact_number = models.CharField(max_length=10, blank=True,unique='True') 
 
