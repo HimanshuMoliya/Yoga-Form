@@ -46,13 +46,13 @@ document.getElementById("formdata").addEventListener("submit",function(e){
         // myHeaders.append("Authorization", "Bearer <api_key>");
         // myHeaders.append("Content-Type", "application/json");
 
-        fetch('https://web-production-7af1.up.railway.app',{
+        fetch('https://web-production-7af1.up.railway.app/',{
             method:'POST',
             body:formData,
             // headers: myHeaders
         })
         .then(response=>response.json())
-        .then(json => console.log(json))
+        .then(response => console.log(JSON.stringify(response)))
         .then(data=>{
             console.log('Success:',data);
             alert("Yay ! " + first_name +  "\n\nYour details have been registered successfully\n\nYou will receive an email with payment link.\n\nKindly do the payment within 1 month to comfirm your admission.")
