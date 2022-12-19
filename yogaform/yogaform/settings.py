@@ -32,7 +32,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY=os.environ.get('SECRET_KEY')
 CSRF_COOKIE_SECURE=True
 SESSION_COOKIE_SECURE=True
-SECURE_SSL_REDIRECT=True
+SECURE_SSL_REDIRECT=False
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = False
@@ -98,7 +98,7 @@ WSGI_APPLICATION = 'yogaform.wsgi.application'
 # CORS_ALLOWED_ORIGINS= [
 #   'http://localhost:8000',
 # ]
-# CSRF_TRUSTED_ORIGINS = ['https://web-production-7af1.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://web-production-7af1.up.railway.app']
 # CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000']
 
 CORS_ALLOW_METHODS = [
