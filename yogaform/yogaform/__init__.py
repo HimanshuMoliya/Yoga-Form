@@ -1,1 +1,0 @@
-SECRET_KEY='ddsj)higxz4((v1h#68mwt5t5kw$mtw$0l2nx71!fa-vo%j#)4'
