@@ -35,8 +35,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECURE_HSTS_SECONDS = 31536000
 # SECURE_CONTENT_TYPE_NOSNIFF = True
-# SECRET_KEY = 'django-insecure-acc5f7ej9gbqg77#d9dc2!nts)yh4%ohv@uk+8x5ru1=e-8uo5'
-SECRET_KEY=os.environ.get('SECRET_KEY')
+SECRET_KEY = 'django-insecure-acc5f7ej9gbqg77#d9dc2!nts)yh4%ohv@uk+8x5ru1=e-8uo5'
+# SECRET_KEY=os.environ.get('SECRET_KEY')
 # print(SECRET_KEY)
 CSRF_COOKIE_SECURE=True
 SESSION_COOKIE_SECURE=True
